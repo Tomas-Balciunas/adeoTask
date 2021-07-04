@@ -52,7 +52,7 @@ class Weather
 			$content = ['weather_data_source' => 'Lietuvos Hidrometeorologijos Tarnyba prie Aplinkos ministerijos','city' => $resp['place']['name'], 'recommendations' => []];
 			$k = 0;
 			$weather = WeatherCondition::all();
-
+			
 			for ($i = 0; $k < 3; $i++) {
 				if ($filt[$i]['forecastTimeUtc'] == now()->endOfDay()->addSecond()->addHours(12)->addDays($k)->toDateTimeString()) {
 					$id = WeatherCondition::where(['condition' => $filt[$i]['conditionCode']])->first()->id;
