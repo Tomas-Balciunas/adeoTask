@@ -7,6 +7,7 @@ use App\Models\WeatherCondition;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Redirect;
 
 class Weather
 {
@@ -40,11 +41,12 @@ class Weather
 	{
 		try {
 			$response = $this->client->request('GET', $url);
+			return $this->response_handler($response->getBody()->getContents());
 		} catch (\Exception $e) {
-			return [];
+			return $e->getMessage();
 		}
 
-		return $this->response_handler($response->getBody()->getContents());
+		
 	}
 
 	public function response_handler($response)
