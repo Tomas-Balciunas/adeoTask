@@ -4,5 +4,5 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Recommendations based on weather</title>
-    <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>

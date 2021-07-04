@@ -18,11 +18,6 @@ class Weather
 		$this->client = $client;
 	}
 
-	public function all()
-	{
-		return $this->endpointRequest('https://api.meteo.lt/v1/places/vilnius/forecasts/long-term');
-	}
-
 	public function recByCity($city)
 	{
 
@@ -30,7 +25,7 @@ class Weather
 			$result = Cache::get($city);
 			return $result;
 		} else {
-			$rec = $this->endpointRequest('https://api.meteo.lt/v1/places/' . $city . '/forecasts/long-term');
+			$rec = $this->endpointRequest('v1/places/' . $city . '/forecasts/long-term');
 			$result = response()->json($rec);
 			Cache::put($city, $result, now()->addMinutes(5));
 			return $result;

@@ -15,12 +15,6 @@ class ProductsController extends Controller
     	$this->weather = $weather;
     }
 
-    public function index()
-    {
-    	return $this->weather->all();
-
-    }
-
     public function show($city)
     {
         return $this->weather->recByCity($city);
