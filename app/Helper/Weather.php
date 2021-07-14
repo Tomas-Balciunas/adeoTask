@@ -40,8 +40,6 @@ class Weather
 		} catch (\Exception $e) {
 			return $e->getMessage();
 		}
-
-		
 	}
 
 	public function response_handler($response)

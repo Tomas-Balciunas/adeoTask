@@ -18,7 +18,7 @@ class ConditionSeeder extends Seeder
             'clear',
             'isolated-clouds',
             'scattered-clouds',
-            'overcast ',
+            'overcast',
             'light-rain',
             'moderate-rain',
             'heavy-rain',
