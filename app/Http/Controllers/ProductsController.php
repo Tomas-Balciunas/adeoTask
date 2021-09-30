@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Models\Products;
@@ -17,6 +19,10 @@ class ProductsController extends Controller
 
     public function show($city)
     {
-        return $this->weather->recByCity($city);
+        try {
+            return $this->weather->recByCity($city);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'City ' . $city . ' not found'], 404);
+        }
     }
 }

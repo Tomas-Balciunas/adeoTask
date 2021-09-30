@@ -17,13 +17,3 @@ use GuzzleHttp\Client;
 Route::get('/', function () {
     return view('blades.home');
 });
-
-// Route::get('/products', function() {
-// 	$client = new Client();
-
-// 	$response = $client->request('GET', 'https://api.meteo.lt/v1/places/vilnius/forecasts');
-// 	$statusCode = $response->getStatusCode();
-// 	$body = $response->getBody()->getContents();
-
-// 	return $body;
-// });
