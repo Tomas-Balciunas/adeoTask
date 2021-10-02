@@ -63,6 +63,6 @@ class Weather
 			return $content;
 		}
 
-		return ['lol'];
+		return [];
 	}
 }
