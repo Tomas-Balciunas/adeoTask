@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $baseUrl = env('METEO_URL');
 
-        $this->app->singleton('GuzzleHttp\Client', function($api) use ($baseUrl) {
+        $this->app->singleton('GuzzleHttp\Client', function ($api) use ($baseUrl) {
             return new Client([
                 'base_uri' => $baseUrl,
             ]);

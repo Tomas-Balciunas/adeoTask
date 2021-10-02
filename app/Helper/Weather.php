@@ -22,7 +22,6 @@ class Weather
 
 	public function recByCity($city)
 	{
-
 		if (Cache::has($city)) {
 			$result = Cache::get($city);
 			return $result;
@@ -36,8 +35,8 @@ class Weather
 
 	public function endpointRequest($url)
 	{
-			$response = $this->client->request('GET', $url);
-			return $this->responseHandler($response->getBody()->getContents());
+		$response = $this->client->request('GET', $url);
+		return $this->responseHandler($response->getBody()->getContents());
 	}
 
 	public function responseHandler($response)
@@ -64,6 +63,6 @@ class Weather
 			return $content;
 		}
 
-		return [];
+		return ['lol'];
 	}
 }

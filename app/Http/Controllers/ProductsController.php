@@ -14,7 +14,7 @@ class ProductsController extends Controller
 
     public function __construct(Weather $weather)
     {
-    	$this->weather = $weather;
+        $this->weather = $weather;
     }
 
     public function show($city)
